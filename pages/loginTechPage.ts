@@ -16,7 +16,7 @@ export class loginTechPage {
     }
     async siteTest(url?: string) {
     // Si 'url' viene undefined, tomará la URL por defecto entre comillas
-    const targetUrl = url || process.env.BASE_URL || 'https://tu-sitio-web.com';
+    const targetUrl = url || process.env.BASE_URL || 'https://techstore-demo-05ad.onrender.com';
      await this.page.goto(targetUrl);
     }
     async loguear(username: string='', password: string=''){
