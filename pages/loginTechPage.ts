@@ -14,7 +14,7 @@ export class loginTechPage {
         this.loginButton = page.locator('[data-testid="login-button"]');
     }
     async siteTest(): Promise<void> {
-    await this.page.goto('/');
+    await this.page.goto(process.env.BASE_URL!);
   }
     async loguear(username: string='', password: string=''){
         await this.userTexBox.fill(username);
