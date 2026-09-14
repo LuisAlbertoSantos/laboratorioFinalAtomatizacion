@@ -1,4 +1,5 @@
 import { Locator, Page } from "@playwright/test";
+import { url } from "inspector";
 
 export class loginTechPage {
     readonly page: Page;
@@ -13,9 +14,11 @@ export class loginTechPage {
         this.passwordTexBox = page.locator('[data-testid="password-input"]');
         this.loginButton = page.locator('[data-testid="login-button"]');
     }
-    async siteTest(): Promise<void> {
-    await this.page.goto(process.env.BASE_URL!);
-  }
+    async siteTest(url?: string) {
+    // Si 'url' viene undefined, tomará la URL por defecto entre comillas
+    const targetUrl = url || process.env.BASE_URL || 'https://tu-sitio-web.com';
+     await this.page.goto(targetUrl);
+    }
     async loguear(username: string='', password: string=''){
         await this.userTexBox.fill(username);
         await this.passwordTexBox.fill(password);

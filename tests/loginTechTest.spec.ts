@@ -14,7 +14,6 @@ test('TC-001 — LOGIN CORRECTO COMO ADMIN', async ({ page }) => {
 });
 
 test('TC-002 — LOGIN CORRECTO COMO MANAGER', async ({ page }) => {
-  await page.goto(process.env.BASE_URL!);
 
   const loginPage = new loginTechPage(page); 
   await loginPage.siteTest();
